@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { HttpModule }    from '@angular/http';
 
+import { CoreModule } from './core/core.module';
+
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -23,6 +25,7 @@ import { AppRoutingModule }  from './app-routing.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    CoreModule,
     AppRoutingModule,
   ],
   declarations: [ AppComponent, HeroDetailComponent, HeroesComponent, DashboardComponent, HeroSearchComponent ],

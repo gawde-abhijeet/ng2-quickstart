@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+             <button type="button" 
+                        class="navbar-toggle collapsed"
+                        (click)="toggleState()">
+                <span class="sr-only">Toggle navigation</span>
+                {{menuIcon}}
+            </button>
+            <a class="navbar-brand">Project Manager</a>
+        </div>
+        <div class="collapse navbar-collapse" [ngClass]="{'in': !isCollapsed }"> 
+            <ul class="nav navbar-nav">
+                <li (click)="isCollapsed = true;" *ngFor="let menuItem of topMenuItems"
+                    class="nav-item" routerLinkActive="active">
+                    <a class="nav-item nav-link" [routerLink]="[menuItem.path]" routerLinkActive="active">{{menuItem.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

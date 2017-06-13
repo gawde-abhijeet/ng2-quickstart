@@ -6,18 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Heroes';
+var common_1 = require("@angular/common");
+var router_1 = require("@angular/router");
+var navbar_component_1 = require("./navbar.component");
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    return AppComponent;
+    return CoreModule;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n    <h1>{{title}}</h1>\n    <ct-navbar></ct-navbar>\n    <router-outlet></router-outlet>\n  ",
-        styleUrls: ['./app.component.css'],
+CoreModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule, common_1.CommonModule],
+        declarations: [navbar_component_1.NavbarComponent],
+        exports: [navbar_component_1.NavbarComponent],
+        providers: []
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], CoreModule);
+exports.CoreModule = CoreModule;
+//# sourceMappingURL=core.module.js.map
